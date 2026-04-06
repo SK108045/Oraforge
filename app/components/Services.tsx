@@ -1,73 +1,58 @@
-import { Code2, Rocket, Cloud, Smartphone, Zap, Users } from 'lucide-react'
-
-const services = [
-  {
-    icon: Code2,
-    title: 'Custom Software Development',
-    description: 'Empower your business with custom software solutions tailored to your needs. We build technology that drives innovation and efficiency.'
-  },
-  {
-    icon: Rocket,
-    title: 'MVP Development',
-    description: 'Transform your idea into a market-ready product. Build the simplest version that solves your core problem and validates your concept.'
-  },
-  {
-    icon: Cloud,
-    title: 'Cloud & DevOps',
-    description: 'Integrating cloud services with DevOps practices for streamlined, agile, and scalable IT operations and development.'
-  },
-  {
-    icon: Smartphone,
-    title: 'Mobile App Development',
-    description: 'Future-proof your business with advanced cloud technology. Leverage elastic, auto-scaling cloud environments for growth.'
-  },
-  {
-    icon: Zap,
-    title: 'Digital Transformation',
-    description: 'Orchestrate your digital transformation journey. We accelerate your aspirations into reality with expert guidance.'
-  },
-  {
-    icon: Users,
-    title: 'Staff Augmentation',
-    description: 'Enhance your team&apos;s capabilities with our flexible staff augmentation services tailored to your project needs.'
-  }
-]
-
 export default function Services() {
+  const services = [
+    {
+      icon: '💻',
+      title: 'Custom Software Development',
+      description: 'Empower your business with custom software solutions tailored to your needs. We build technology that drives innovation and efficiency.'
+    },
+    {
+      icon: '🚀',
+      title: 'MVP Development',
+      description: 'Launch your product faster with our MVP development services. From concept to market in record time with minimal investment.'
+    },
+    {
+      icon: '⚡',
+      title: 'Digital Transformation',
+      description: 'Transform your business operations with cutting-edge digital solutions. We modernize legacy systems for the digital age.'
+    },
+    {
+      icon: '☁️',
+      title: 'Cloud & DevOps',
+      description: 'Leverage cloud technologies and DevOps practices for scalable, reliable, and efficient infrastructure management.'
+    },
+    {
+      icon: '👥',
+      title: 'Staff Augmentation',
+      description: 'Enhance your team with expert developers. Flexible engagement models tailored to your project needs.'
+    },
+    {
+      icon: '🤖',
+      title: 'AI Solutions',
+      description: 'Harness the power of AI and machine learning to solve complex business problems and drive innovation.'
+    }
+  ];
+
   return (
-    <section id="services" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent via-blue-900/10 to-transparent">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#1a1a1a] mb-4">
-            Our Technology Services
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Comprehensive solutions designed to drive innovation and accelerate your business growth
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h2>
+          <p className="text-xl text-gray-400">Comprehensive technology solutions for modern businesses</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => {
-            const Icon = service.icon
-            return (
-              <div
-                key={index}
-                className="group p-8 bg-[#f8f9fa] rounded-lg border border-gray-200 hover:border-[#0066cc] hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
-              >
-                <div className="mb-4 inline-block p-3 bg-[#0066cc] bg-opacity-10 rounded-lg group-hover:bg-[#0066cc] group-hover:bg-opacity-20 transition-all">
-                  <Icon className="w-8 h-8 text-[#0066cc]" />
-                </div>
-                <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            )
-          })}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="group p-8 rounded-xl bg-gray-900/50 hover:bg-blue-900/40 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20"
+            >
+              <div className="text-4xl mb-4">{service.icon}</div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-blue-400 transition">{service.title}</h3>
+              <p className="text-gray-400 leading-relaxed">{service.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
